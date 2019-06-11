@@ -2,11 +2,12 @@
 // notes 
 // 1. 
 // 2. 
-// 3.
-
+// 3. theme of cards - animal 
+// 4. modal - username and choose theme
 
 
 let numOfCards = 20;
+let theme = "Food"
 
 function cardsOrder() {
     let array = [];
@@ -35,7 +36,7 @@ function start(orderArray) {
     for (let i = 0; i < orderArray.length; i++) {
         let card = document.getElementsByClassName("card")[i];
         let image = document.createElement("img");
-        image.src = `./images/pic${orderArray[i]}.svg`;
+        image.src = `./images/${theme}/pic${orderArray[i]}.svg`;
         image.style.width = "45%"
         card.appendChild(image);
     }
