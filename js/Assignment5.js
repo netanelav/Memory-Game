@@ -32,39 +32,117 @@ function countInArray(array, num) {
     return count;
 }
 
-function start(orderArray) {
+function startGame(orderArray) {
     for (let i = 0; i < orderArray.length; i++) {
         let card = document.getElementsByClassName("card")[i];
         let image = document.createElement("img");
         image.src = `./images/${theme}/pic${orderArray[i]}.svg`;
-        image.style.width = "45%"
+        image.style.width = "35%"
+        image.style.zIndex = "-1";
         card.appendChild(image);
     }
 }
 
 let cards = cardsOrder();
-start(cards);
+startGame(cards);
 
 //////////////////////////////////////////////////////////
 
-let numOfClicks = 0;
+let cardsOpen = 0;
 let firstClick = false;
 let firstCard = '';
 let secondCard = '';
 
 $('.card').click(function showCard() {
-    if (numOfClicks === 0) {
+    if (cardsOpen === 0) {
         $(this).addClass('flip');
         firstCard = $(this).html();
         console.log(firstCard);
-        numOfClicks === 1;
+        cardsOpen++;
+        console.log(cardsOpen);
     }
-    if (numOfClicks === 1) {
+    if (cardsOpen === 1) {
         $(this).addClass('flip');
         firstCard = $(this).html();
         console.log(firstCard);
-        numOfClicks++;
+        cardsOpen++;
     }
 });
 
 
+function checkMatch(firstCard, secondCard) {
+    if (firstCard === secondCard) {
+        firstCard.addClass('cards-match');
+        secondCard.addClass('cards-match');
+    } else {
+        firstCard.addClass('cards-different');
+        secondCard.addClass('cards-different');
+
+        // setTimeout(function () {
+        //     firstCard.removeClass('flip');
+        //     firstCard.removeClass('cards-different');
+        //     secondCard.removeClass('flip');
+        //     secondCard.removeClass('cards-different');
+        // }, 1000);
+
+        setTimeout(removeClass(firstCard), 1000);
+        setTimeout(removeClass(firstCard), 1000);
+    }
+}
+
+
+function removeClass(eventObj) {
+    eventObj.removeClass('flip');
+    eventObj.removeClass('cards-different');
+}
+
+// function matching(e) {
+//     if (firstClick) {
+//         // firstClickedTile = e.target.parentNode;
+//         let firstImg = e.firstChild;
+//         console.log(firstImg);
+//         numOfClicks++;
+//     } if (numOfClicks === 1) {
+//         let secondImg = e.firstChild;
+//         console.log(secondImg);
+//     }
+// }
+
+
+
+
+
+// function cardOpen() {
+//     openedCards.push(this);
+//     var len = openedCards.length;
+//     if (len === 2) {
+//         moveCounter();
+//         if (openedCards[0].type === openedCards[1].type) {
+//             matched();
+//         } else {
+//             unmatched();
+//         }
+//     }
+// };
+
+// //for when cards match
+// function matched() {
+//     openedCards[0].classList.add("match");
+//     openedCards[1].classList.add("match");
+//     openedCards[0].classList.remove("show", "open");
+//     openedCards[1].classList.remove("show", "open");
+//     openedCards = [];
+// }
+
+// //for when cards don't match
+// function unmatched() {
+//     openedCards[0].classList.add("unmatched");
+//     openedCards[1].classList.add("unmatched");
+//     disable();
+//     setTimeout(function () {
+//         openedCards[0].classList.remove("show", "open", "unmatched");
+//         openedCards[1].classList.remove("show", "open", "unmatched");
+//         enable();
+//         openedCards = [];
+//     }, 1100);
+// }

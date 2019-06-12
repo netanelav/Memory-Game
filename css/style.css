@@ -20,14 +20,24 @@ h4 {
   justify-content: center;
   align-items: center;
   height: 100px;
-  background-color: rgb(3, 3, 3);
+  background-color: rgb(92, 91, 91);
   margin: 5px;
   border-radius: 20px;
+  cursor: pointer;
 }
 
 .flip {
-  background-color: white;
+  background-color: rgb(71, 143, 226);
   transition: all 0.8s;
   transform-style: preserve-3d;
   transform: rotateY(180deg);
+}
+
+.cards-match { 
+  /* add class disables */
+  background-color: lightgreen;
+}
+
+.cards-different {
+  background-color: lightcoral;
 }
