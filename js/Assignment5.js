@@ -1,10 +1,7 @@
 
-// notes 
-// 1. 
-// 2. 
-// 3. theme of cards - animal 
-// 4. modal - username and choose theme
-
+// notes -
+// 1. theme of cards - animal 
+// 2. modal - username and choose theme
 
 let numOfCards = 20;
 let theme = "Food"
@@ -37,7 +34,7 @@ function startGame(orderArray) {
         let card = document.getElementsByClassName("card")[i];
         let image = document.createElement("img");
         image.src = `./images/${theme}/pic${orderArray[i]}.svg`;
-        image.style.width = "35%"
+        image.style.width = "40%"
         image.style.zIndex = "-1";
         card.appendChild(image);
     }
@@ -49,100 +46,41 @@ startGame(cards);
 //////////////////////////////////////////////////////////
 
 let cardsOpen = 0;
-let firstClick = false;
-let firstCard = '';
-let secondCard = '';
+let firstCard;
+let secondCard;
+let cardOpen = true;
+let wrongGuess = 0;
+let totalAttempts = 0;
 
 $('.card').click(function showCard() {
-    if (cardsOpen === 0) {
-        $(this).addClass('flip');
-        firstCard = $(this).html();
-        console.log(firstCard);
-        cardsOpen++;
-        console.log(cardsOpen);
+    cardOpen >= 2 ? false : true;
+    $(this).addClass('flip');
+    if (cardOpen) {
+        firstCard = $(this);
     }
-    if (cardsOpen === 1) {
-        $(this).addClass('flip');
-        firstCard = $(this).html();
-        console.log(firstCard);
-        cardsOpen++;
+    cardOpen = false;
+    secondCard = $(this);
+    cardsOpen++;
+
+    if (cardsOpen === 2) {
+        checkMatch(firstCard, secondCard);
     }
 });
 
-
 function checkMatch(firstCard, secondCard) {
     if (firstCard === secondCard) {
-        firstCard.addClass('cards-match');
-        secondCard.addClass('cards-match');
+        console.log("match");
+        $(firstCard).addClass('match');
+        $(secondCard).addClass('match');
+        totalAttempts++
     } else {
-        firstCard.addClass('cards-different');
-        secondCard.addClass('cards-different');
-
-        // setTimeout(function () {
-        //     firstCard.removeClass('flip');
-        //     firstCard.removeClass('cards-different');
-        //     secondCard.removeClass('flip');
-        //     secondCard.removeClass('cards-different');
-        // }, 1000);
-
-        setTimeout(removeClass(firstCard), 1000);
-        setTimeout(removeClass(firstCard), 1000);
+        console.log("not match");
+        $(firstCard).addClass('different');
+        $(secondCard).addClass('different');
+        wrongGuess++;
+        totalAttempts++;
     }
+    cardOpen = 0;
+    cardOpen = true;
 }
 
-
-function removeClass(eventObj) {
-    eventObj.removeClass('flip');
-    eventObj.removeClass('cards-different');
-}
-
-// function matching(e) {
-//     if (firstClick) {
-//         // firstClickedTile = e.target.parentNode;
-//         let firstImg = e.firstChild;
-//         console.log(firstImg);
-//         numOfClicks++;
-//     } if (numOfClicks === 1) {
-//         let secondImg = e.firstChild;
-//         console.log(secondImg);
-//     }
-// }
-
-
-
-
-
-// function cardOpen() {
-//     openedCards.push(this);
-//     var len = openedCards.length;
-//     if (len === 2) {
-//         moveCounter();
-//         if (openedCards[0].type === openedCards[1].type) {
-//             matched();
-//         } else {
-//             unmatched();
-//         }
-//     }
-// };
-
-// //for when cards match
-// function matched() {
-//     openedCards[0].classList.add("match");
-//     openedCards[1].classList.add("match");
-//     openedCards[0].classList.remove("show", "open");
-//     openedCards[1].classList.remove("show", "open");
-//     openedCards = [];
-// }
-
-// //for when cards don't match
-// function unmatched() {
-//     openedCards[0].classList.add("unmatched");
-//     openedCards[1].classList.add("unmatched");
-//     disable();
-//     setTimeout(function () {
-//         openedCards[0].classList.remove("show", "open", "unmatched");
-//         openedCards[1].classList.remove("show", "open", "unmatched");
-//         enable();
-//         openedCards = [];
-//     }, 1100);
-// }

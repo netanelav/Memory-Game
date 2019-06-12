@@ -15,12 +15,16 @@ h4 {
   align-items: center;
 } */
 
+.row {
+  justify-content: center;
+}
+
 .card {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100px;
-  background-color: rgb(92, 91, 91);
+  background-color: rgb(143, 141, 141);
   margin: 5px;
   border-radius: 20px;
   cursor: pointer;
@@ -33,11 +37,20 @@ h4 {
   transform: rotateY(180deg);
 }
 
-.cards-match { 
-  /* add class disables */
-  background-color: lightgreen;
+.match {
+	background: lightgreen;
+	-webkit-backface-visibility: visible !important;
+	backface-visibility: visible !important;
+	animation-duration: .75s;
 }
 
-.cards-different {
-  background-color: lightcoral;
+.different {
+  background: lightcoral;
+}
+
+.disabled {
+  background-color: rgb(143, 141, 141);
+  transition: all 0.8s;
+  transform-style: preserve-3d;
+  transform: rotateY(180deg);
 }
