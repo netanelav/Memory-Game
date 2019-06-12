@@ -47,10 +47,24 @@ start(cards);
 
 //////////////////////////////////////////////////////////
 
-$('.col').click( function showCard() {
-    $(this).toggleClass('flip');
+let numOfClicks = 0;
+let firstClick = false;
+let firstCard = '';
+let secondCard = '';
+
+$('.card').click(function showCard() {
+    if (numOfClicks === 0) {
+        $(this).addClass('flip');
+        firstCard = $(this).html();
+        console.log(firstCard);
+        numOfClicks === 1;
+    }
+    if (numOfClicks === 1) {
+        $(this).addClass('flip');
+        firstCard = $(this).html();
+        console.log(firstCard);
+        numOfClicks++;
+    }
 });
-
-
 
 
