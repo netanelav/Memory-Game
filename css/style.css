@@ -8,6 +8,7 @@ body {
 h4 {
   display: inline-block;
 }
+
 /* .container {
   display: flex;
   flex-direction: column;
@@ -39,18 +40,10 @@ h4 {
 
 .match {
 	background: lightgreen;
-	-webkit-backface-visibility: visible !important;
-	backface-visibility: visible !important;
-	animation-duration: .75s;
+  transition: all 1s;
 }
 
 .different {
   background: lightcoral;
-}
-
-.disabled {
-  background-color: rgb(143, 141, 141);
-  transition: all 0.8s;
-  transform-style: preserve-3d;
-  transform: rotateY(180deg);
+  transition: all 1s;
 }

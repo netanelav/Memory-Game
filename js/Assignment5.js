@@ -4,7 +4,12 @@
 // 2. modal - username and choose theme
 
 let numOfCards = 20;
-let theme = "Food"
+let theme = document.getElementById('theme');
+let wrongGuess = document.getElementById('guess');
+let userChoice = "Food"
+
+wrongGuess.innerHTML = 0;
+theme.innerHTML = (userChoice);
 
 function cardsOrder() {
     let array = [];
@@ -33,7 +38,7 @@ function startGame(orderArray) {
     for (let i = 0; i < orderArray.length; i++) {
         let card = document.getElementsByClassName("card")[i];
         let image = document.createElement("img");
-        image.src = `./images/${theme}/pic${orderArray[i]}.svg`;
+        image.src = `./images/${userChoice}/pic${orderArray[i]}.svg`;
         image.style.width = "40%"
         image.style.zIndex = "-1";
         card.appendChild(image);
@@ -48,17 +53,15 @@ startGame(cards);
 let cardsOpen = 0;
 let firstCard;
 let secondCard;
-let cardOpen = true;
-let wrongGuess = 0;
-let totalAttempts = 0;
+let ifCardOpen = true;
 
 $('.card').click(function showCard() {
-    cardOpen >= 2 ? false : true;
+    ifCardOpen >= 2 ? false : true;
     $(this).addClass('flip');
-    if (cardOpen) {
+    if (ifCardOpen) {
         firstCard = $(this);
     }
-    cardOpen = false;
+    ifCardOpen = false;
     secondCard = $(this);
     cardsOpen++;
 
@@ -68,19 +71,18 @@ $('.card').click(function showCard() {
 });
 
 function checkMatch(firstCard, secondCard) {
-    if (firstCard === secondCard) {
+    if (firstCard[0].firstChild.src === secondCard[0].firstChild.src) {
         console.log("match");
         $(firstCard).addClass('match');
         $(secondCard).addClass('match');
-        totalAttempts++
+        // $(firstCard).removeClass('flip');
+        // $(secondCard).removeClass('flip');
     } else {
         console.log("not match");
         $(firstCard).addClass('different');
         $(secondCard).addClass('different');
-        wrongGuess++;
-        totalAttempts++;
+        wrongGuess.innerHTML++;
     }
-    cardOpen = 0;
-    cardOpen = true;
+    cardsOpen = 0;
+    ifCardOpen = true;
 }
-
