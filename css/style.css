@@ -25,17 +25,18 @@ h4 {
   justify-content: center;
   align-items: center;
   height: 100px;
-  background-color: rgb(143, 141, 141);
+  background: rgb(143, 141, 141);
   margin: 5px;
   border-radius: 20px;
   cursor: pointer;
 }
 
 .flip {
-  background-color: rgb(71, 143, 226);
+  background: rgb(71, 143, 226);
   transition: all 0.8s;
   transform-style: preserve-3d;
   transform: rotateY(180deg);
+  visibility: visible;
 }
 
 .match {
@@ -46,4 +47,10 @@ h4 {
 .different {
   background: lightcoral;
   transition: all 1s;
+}
+
+.hide {
+  transition: all 0.8s;
+  transform: rotateY(0deg);
+  transform-style: preserve-3d;
 }
