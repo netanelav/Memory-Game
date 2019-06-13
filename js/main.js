@@ -2,7 +2,6 @@
 // notes -
 // delete notes
 // 1. theme of cards - animal 
-// 2. modal start- username and choose theme
 // 3. modal end
 // clean code
 // 7. e or this?
@@ -69,6 +68,17 @@ function cardsDifferent(first, second) {
 
 function checkIfWon() {
     if (cardsMatchCounter === 10) {
-        alert("you won");
+        $('#winModal').modal('show');
+        $('#modal-theme').text(`You played the ${userChoice} theme`);
+        $("#moves").text(`You made ${wrongGuess} mistakes`);
     }
 }
+
+$(window).on('load', function () {
+    $('#start-modal').modal('show');
+});
+
+$('#new-game').click(() => {
+    location.reload();
+});
+

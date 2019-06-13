@@ -21,25 +21,27 @@
             <div class="modal-content">
                 <div class="modal-body">
                     <div class="title">
-                        <p>
-                            <strong>Welcome to my Memory Game</strong>
-                        </p>
+                        <p><strong>Welcome to my Memory Game</strong></p>
                     </div>
-                    <p class="user-input">
+                    <!-- <div class="user-input">
                         <p>What is your name?</p>
                         <input type="text" id="username">
-                    </p>
-                    <p class="text-center">
-                        <p>Choose your favorite theme</p>
-                    </p>
+                    </div> -->
                     <div class="modal-body">
-                        <input type="radio" id="animals" value="option1">Animals 
-                        <input type="radio" id="food" value="option2">Food
-                        <input type="radio" id="sports" value="option3">Sport
+                        <p class="text-center">Choose your favorite theme</p>
+                        <div class="radio">
+                            <label><input id="btn1" type="radio" name="themes">Animals</label>
+                        </div>
+                        <div class="radio">
+                            <label><input id="btn2" type="radio" name="themes">Food</label>
+                        </div>
+                        <div class="radio">
+                            <label><input id="btn3" type="radio" name="themes">Sports</label>
+                        </div>
                     </div>
                 </div>
                 <div class="modal-footer justify-content-center">
-                    <button>Let's Go!</button>
+                    <button id="start">Let's Go!</button>
                 </div>
             </div>
         </div>
@@ -59,7 +61,7 @@
                 <h4>Wrong Guess: <span id="guess"></span></h4>
             </div>
             <div class="col-md-4">
-                <button id="new">New Game</button>
+                <button id="new-game">New Game</button>
             </div>
         </div>
         <div class="row">
@@ -92,6 +94,21 @@
         </div>
     </div>
 
+    <div class="modal fade top" id="win-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true" data-backdrop="fade in">
+        <div class="modal-dialog modal-full-height modal-right modal-notify modal-info" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <p><strong>Congratulations 🎉</strong></p>
+                    <p id="modal-theme"></p>
+                    <p id="moves"></p>
+                </div>
+                <div class="modal-footer justify-content-center">
+                    <button id="modal-btn">Play again 😄</button>
+                </div>
+            </div>
+        </div>
+    </div>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
