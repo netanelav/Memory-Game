@@ -1,0 +1,9 @@
+.modal-content {
+  position: absolute;
+  top: 100px;
+  /* box-shadow: 10px 10px */
+}
+
+.title {
+    font-size: 30px;
+}

@@ -10,10 +10,41 @@
     <link rel="stylesheet prefetch" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/modal.css">
     <link rel="stylesheet" href="./css/style.css">
 </head>
 
 <body>
+    <div class="modal fade top" id="start-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true" data-backdrop="fade in">
+        <div class="modal-dialog modal-full-height modal-right modal-notify modal-info" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="title">
+                        <p>
+                            <strong>Welcome to my Memory Game</strong>
+                        </p>
+                    </div>
+                    <p class="user-input">
+                        <p>What is your name?</p>
+                        <input type="text" id="username">
+                    </p>
+                    <p class="text-center">
+                        <p>Choose your favorite theme</p>
+                    </p>
+                    <div class="modal-body">
+                        <input type="radio" id="animals" value="option1">Animals 
+                        <input type="radio" id="food" value="option2">Food
+                        <input type="radio" id="sports" value="option3">Sport
+                    </div>
+                </div>
+                <div class="modal-footer justify-content-center">
+                    <button>Let's Go!</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div id="board" class="container">
         <div class="row m-4">
             <div id="title" class="col-md-12">
@@ -61,8 +92,13 @@
         </div>
     </div>
 
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <script type="text/javascript" src="./js/modal.js"></script>
     <script type="text/javascript" src="./js/cards.js"></script>
     <script type="text/javascript" src="./js/main.js"></script>
 </body>

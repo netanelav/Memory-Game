@@ -4,36 +4,34 @@
 // 1. theme of cards - animal 
 // 2. modal start- username and choose theme
 // 3. modal end
+// clean code
 // 7. e or this?
-// 8. replace true/false
 // 9. pic near title and cool font 
 
 let cardsOpenCounter = 0;
 let firstCard, secondCard;
-let ifCardOpen = true;
+let cardIsShown = false;
+let cardsMatchCounter = 0;
 let wrongGuess = document.getElementById('guess');
-
 wrongGuess.innerHTML = 0;
-// consider change to array.push
 
 $('.card').click(function showCard() {
-    cardsOpenCounter >= 2 ? false : true;
+    cardsOpenCounter >= 2 ? true : false;
     $(this).addClass('flip');
     $(this)[0].firstChild.style.visibility = 'visible';
-    if (ifCardOpen) {
+    if (!cardIsShown) {
         firstCard = $(this);
     }
-    ifCardOpen = false;
+    cardIsShown = true;
     secondCard = $(this);
     cardsOpenCounter++;
 
     if (cardsOpenCounter === 2) {
-        checkMatch(firstCard, secondCard);
+        checkIfCardsMatch(firstCard, secondCard);
     }
 });
 
-
-function checkMatch(firstCard, secondCard) {
+function checkIfCardsMatch(firstCard, secondCard) {
     let first = firstCard[0];
     let second = secondCard[0];
     if (first.firstChild.getAttribute('src') === second.firstChild.getAttribute('src')) {
@@ -42,13 +40,14 @@ function checkMatch(firstCard, secondCard) {
         cardsDifferent(first, second);
     }
     cardsOpenCounter = 0;
-    ifCardOpen = true;
+    cardIsShown = false;
 }
-
 
 function cardsMatch(first, second) {
     first.classList.add('match');
     second.classList.add('match');
+    cardsMatchCounter++;
+    checkIfWon();
 }
 
 function cardsDifferent(first, second) {
@@ -66,4 +65,10 @@ function cardsDifferent(first, second) {
     first.classList.remove('hide');
     second.classList.remove('hide');
     wrongGuess.innerHTML++;
+}
+
+function checkIfWon() {
+    if (cardsMatchCounter === 10) {
+        alert("you won");
+    }
 }
