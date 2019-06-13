@@ -1,8 +1,8 @@
-$(window).on('load', function () {
+$(window).on('load', () => {
     $('#start-modal').modal('show');
 });
 
-$('#start').click(function () {
+$('#start').click( () => {
     themeUserChoice();
     $('#start-modal').modal('toggle');
 });
@@ -20,3 +20,20 @@ function themeUserChoice() {
     }
     return themeSelected;
 }
+
+function getUserName() {
+    let userName = $('#username').val();
+    return userName;
+}
+
+function endGame() {
+    let userName = getUserName();
+    $('#win-modal').modal('show');
+    $('#user').text(`Congratulations ${userName} 🎉`);
+    $('#modal-theme').text(`You played the ${userChoice} theme`);
+    $("#moves").text(`and finished with ${wrongGuess.innerText} mistakes`);
+}
+
+$('#modal-btn').click(() => {
+    location.reload();
+});

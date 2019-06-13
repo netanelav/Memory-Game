@@ -1,10 +1,10 @@
 
 // notes -
 // delete notes
-// 1. theme of cards - animal 
 // 3. modal end
 // clean code
-// 7. e or this?
+// fix radio btn
+// disable when 2 open
 // 9. pic near title and cool font 
 
 let cardsOpenCounter = 0;
@@ -68,15 +68,9 @@ function cardsDifferent(first, second) {
 
 function checkIfWon() {
     if (cardsMatchCounter === 10) {
-        $('#winModal').modal('show');
-        $('#modal-theme').text(`You played the ${userChoice} theme`);
-        $("#moves").text(`You made ${wrongGuess} mistakes`);
+        endGame();
     }
 }
-
-$(window).on('load', function () {
-    $('#start-modal').modal('show');
-});
 
 $('#new-game').click(() => {
     location.reload();

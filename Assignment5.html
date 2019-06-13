@@ -7,9 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="./css/reset.css">
-    <link rel="stylesheet prefetch" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- <link rel="stylesheet prefetch" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css"> -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="./css/modal.css">
     <link rel="stylesheet" href="./css/style.css">
 </head>
@@ -23,21 +22,15 @@
                     <div class="title">
                         <p><strong>Welcome to my Memory Game</strong></p>
                     </div>
-                    <!-- <div class="user-input">
-                        <p>What is your name?</p>
+                    <div class="user-input">
+                        <p>Insert your name:</p>
                         <input type="text" id="username">
-                    </div> -->
-                    <div class="modal-body">
-                        <p class="text-center">Choose your favorite theme</p>
-                        <div class="radio">
-                            <label><input id="btn1" type="radio" name="themes">Animals</label>
-                        </div>
-                        <div class="radio">
-                            <label><input id="btn2" type="radio" name="themes">Food</label>
-                        </div>
-                        <div class="radio">
-                            <label><input id="btn3" type="radio" name="themes">Sports</label>
-                        </div>
+                    </div>
+                    <p class="theme-title">Choose your favorite theme</p>
+                    <div class="radio-buttons">
+                        <span class="radio"><input id="btn1" type="radio" name="themes"> Animals</span>
+                        <span class="radio"><input id="btn2" type="radio" name="themes"> Food</span>
+                        <span class="radio"><input id="btn3" type="radio" name="themes"> Sports</span>
                     </div>
                 </div>
                 <div class="modal-footer justify-content-center">
@@ -99,12 +92,12 @@
         <div class="modal-dialog modal-full-height modal-right modal-notify modal-info" role="document">
             <div class="modal-content">
                 <div class="modal-body">
-                    <p><strong>Congratulations 🎉</strong></p>
+                    <p id="user"></p>
                     <p id="modal-theme"></p>
                     <p id="moves"></p>
                 </div>
                 <div class="modal-footer justify-content-center">
-                    <button id="modal-btn">Play again 😄</button>
+                    <button id="modal-btn">Play again</button>
                 </div>
             </div>
         </div>

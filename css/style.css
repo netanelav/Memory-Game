@@ -47,7 +47,8 @@ h4 {
   transition: all 1s;
 }
 
-#new-game, #modal-btn {
+#new-game,
+#modal-btn {
   font-size: 20px;
   border: 2px solid rgb(143, 141, 141);
   margin: 5px;

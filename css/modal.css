@@ -5,5 +5,26 @@
 }
 
 .title {
-    font-size: 30px;
+  font-size: 30px;
+}
+
+.modal-body {
+  font-size: 20px;
+}
+
+.theme-title {
+  margin: 10px;
+}
+
+.radio {
+  margin-right: 30px;
+  text-align: center;
+}
+
+#user {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+#start {
 }
