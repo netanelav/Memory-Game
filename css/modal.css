@@ -1,7 +1,7 @@
 .modal-content {
   position: absolute;
   top: 100px;
-  /* box-shadow: 10px 10px */
+  box-shadow: 2px 5px 61px 0px rgb(197, 193, 197);
 }
 
 .title {
@@ -21,10 +21,27 @@
   text-align: center;
 }
 
+#username {
+  text-align: center;
+}
+
 #user {
   font-size: 30px;
   font-weight: bold;
 }
 
+#modal-btn,
 #start {
+  font-size: 20px;
+  border: 2px solid rgb(143, 141, 141);
+  padding: 5px 20px;
+}
+
+#modal-btn:hover,
+#start:hover {
+  border-radius: 20px;
+  background: rgb(130, 240, 130);
+  color:white;
+  transition: all 0.3s;
+  
 }

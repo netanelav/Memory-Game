@@ -1,12 +1,3 @@
-
-// notes -
-// delete notes
-// 3. modal end
-// clean code
-// fix radio btn
-// disable when 2 open
-// 9. pic near title and cool font 
-
 let cardsOpenCounter = 0;
 let firstCard, secondCard;
 let cardIsShown = false;
@@ -16,15 +7,16 @@ wrongGuess.innerHTML = 0;
 
 $('.card').click(function showCard() {
     cardsOpenCounter >= 2 ? true : false;
-    $(this).addClass('flip');
-    $(this)[0].firstChild.style.visibility = 'visible';
-    if (!cardIsShown) {
-        firstCard = $(this);
+    if (!$(this).hasClass('flip')) {
+        $(this).addClass('flip');
+        $(this)[0].firstChild.style.visibility = 'visible';
+        if (!cardIsShown) {
+            firstCard = $(this);
+        }
+        cardIsShown = true;
+        secondCard = $(this);
+        cardsOpenCounter++;
     }
-    cardIsShown = true;
-    secondCard = $(this);
-    cardsOpenCounter++;
-
     if (cardsOpenCounter === 2) {
         checkIfCardsMatch(firstCard, secondCard);
     }

@@ -1,8 +1,21 @@
+@import url("https://fonts.googleapis.com/css?family=Saira+Semi+Condensed&display=swap");
+
 body {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
   text-align: center;
+  background-image: url("../images/bg.jpg");
+}
+
+#title {
+  font-family: "Saira Semi Condensed", sans-serif;
+  font-size: 50px;
+}
+
+#logo {
+  width: 5vw;
+  vertical-align: bottom;
 }
 
 h4 {
@@ -18,7 +31,7 @@ h4 {
   justify-content: center;
   align-items: center;
   height: 100px;
-  background: rgb(143, 141, 141);
+  background: rgb(199, 196, 196);
   margin: 5px;
   border-radius: 20px;
   cursor: pointer;
@@ -47,9 +60,7 @@ h4 {
   transition: all 1s;
 }
 
-#new-game,
-#modal-btn {
+#new-game {
   font-size: 20px;
   border: 2px solid rgb(143, 141, 141);
-  margin: 5px;
 }

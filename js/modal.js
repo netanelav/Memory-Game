@@ -31,7 +31,7 @@ function endGame() {
     $('#win-modal').modal('show');
     $('#user').text(`Congratulations ${userName} 🎉`);
     $('#modal-theme').text(`You played the ${userChoice} theme`);
-    $("#moves").text(`and finished with ${wrongGuess.innerText} mistakes`);
+    $("#moves").text(`and finished with ${wrongGuess.innerText} wrong guesses`);
 }
 
 $('#modal-btn').click(() => {
