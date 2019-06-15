@@ -2,6 +2,7 @@
   position: absolute;
   top: 100px;
   box-shadow: 2px 5px 61px 0px rgb(197, 193, 197);
+  background-color: #e7e8ec;
 }
 
 .title {
@@ -40,8 +41,7 @@
 #modal-btn:hover,
 #start:hover {
   border-radius: 20px;
-  background: rgb(130, 240, 130);
-  color:white;
+  background: rgb(161, 243, 161);
   transition: all 0.3s;
   
 }

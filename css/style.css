@@ -55,6 +55,11 @@ h4 {
   transition: all 1s;
 }
 
+.pop {
+  transform: scale(1.2,1.2);
+  z-index: 1;
+}
+
 .different {
   background: lightcoral;
   transition: all 1s;

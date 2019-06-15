@@ -35,8 +35,12 @@ function checkIfCardsMatch(firstCard, secondCard) {
 }
 
 function cardsMatch(first, second) {
-    first.classList.add('match');
-    second.classList.add('match');
+    first.classList.add('match','pop');
+    second.classList.add('match','pop');
+    setTimeout(function () {
+        first.classList.remove('pop');
+        second.classList.remove('pop');
+    }, 800);
     cardsMatchCounter++;
     checkIfWon();
 }
