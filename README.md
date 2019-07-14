@@ -1,4 +1,4 @@
-# Memory-Game
+# Memory Game
 
 5th Assignment for Appleseed's Academy Coding Bootcamp (Week 5).
 
