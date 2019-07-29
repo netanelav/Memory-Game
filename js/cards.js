@@ -34,7 +34,7 @@ $('#start').click(() => {
             let card = document.getElementsByClassName("card")[i];
             let image = document.createElement("img");
             image.src = `./images/${userChoice}/pic${orderArray[i]}.svg`;
-            image.style.width = '40%';
+            // image.style.width = '40%';
             image.style.visibility = 'hidden';
             card.appendChild(image);
         }

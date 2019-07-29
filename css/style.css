@@ -69,3 +69,13 @@ h4 {
   font-size: 20px;
   border: 2px solid rgb(143, 141, 141);
 }
+
+img {
+  width: 40%;
+}
+
+@media only screen and (max-width: 812px) {
+  img {
+    width: 100%;
+  }
+}
