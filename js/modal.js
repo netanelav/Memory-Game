@@ -37,3 +37,8 @@ function endGame() {
 $('#modal-btn').click(() => {
     location.reload();
 });
+
+$('#start-modal').modal({
+    backdrop: 'static',
+    keyboard: false
+})
